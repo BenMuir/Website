@@ -1,11 +1,71 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// This is the frontmatter area.
+// You can add logic here if you need to fetch data later.
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Landing Page</title>
+  </head>
+<body>
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="/my-video.mp4" type="video/mp4" />
+    </video>
+
+<main class="content">
+      <h1>Welcome to Slopco.com</h1>
+      <p id="sound-btn" style="cursor: pointer;">We love the slop, we eat it up.</p>
+    </main>
+<style>
+  body { 
+    margin: 0; 
+    padding: 0; 
+    font-family: sans-serif; 
+    color: white; 
+    overflow: hidden; 
+  }
+
+  .bg-video { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover; 
+    z-index: -1; 
+  }
+
+  .content { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+    text-align: center; 
+    background: rgba(0, 0, 0, 0.3); 
+  }
+
+  h1 { font-size: 3rem; margin: 0 0 1rem 0; }
+
+  #sound-btn {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+    padding: 5px;
+  }
+
+  #sound-btn:hover {
+    transform: scale(1.05);
+    color: #ffcc00;
+  }
+</style>
+
+    <script>
+      const btn = document.getElementById('sound-btn');
+      const audio = new Audio('/click.mp3'); 
+      btn.addEventListener('click', () => { audio.play(); });
+    </script>
+  </body>
+</html>
