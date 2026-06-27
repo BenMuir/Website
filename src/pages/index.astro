@@ -31,15 +31,14 @@
         color: white;
         overflow: hidden;
       }
-
       .bg-video {
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        object-fit: cover; /* This makes it fill the screen */
-        object-position: center; /* This ensures the middle of the video is the anchor point */
+        object-fit: cover;
+        object-position: center; /* Keeps the video centered during crop */
         z-index: -1;
       }
 
